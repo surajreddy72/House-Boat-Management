@@ -242,7 +242,7 @@ public class CreateNewCust implements ActionListener {
                 	}
                 	else {
 	                	try {
-	                	Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Project", "postgres", "Suraj@27");	
+	                	Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Project", "postgres", "admin");	
 	                    PreparedStatement st = (PreparedStatement)connection.prepareStatement("Select customer_id from customer_login where username =?;");
 	                    st.setString(1,uname);	                    
 	                    rs = st.executeQuery();
@@ -254,7 +254,7 @@ public class CreateNewCust implements ActionListener {
 	                    else {
 	                    	try {
 	                			Class.forName("org.postgresql.Driver");
-	                			c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Project", "postgres", "Suraj@27");
+	                			c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Project", "postgres", "admin");
 	                			Statement s = c.createStatement();
 	                			String sqll = "select count(customer_id) from customer;";
 	                			ResultSet rs1 = s.executeQuery(sqll);

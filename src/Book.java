@@ -14,7 +14,7 @@ public class Book {
 		Book(){
 		try {
 			Class.forName("org.postgresql.Driver");
-			Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Project", "postgres", "Suraj@27");
+			Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Project", "postgres", "admin");
 			stmt = connection.createStatement();
 		}
 		catch(Exception e) {
@@ -28,7 +28,7 @@ public class Book {
 			String Hid[] = new String[8];
 			try {
 				Class.forName("org.postgresql.Driver");
-				Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Project", "postgres", "Suraj@27");
+				Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Project", "postgres", "admin");
 				stmt = connection.createStatement();
 				ResultSet r = stmt.executeQuery("select Houseboat_id from Houseboat;") ;
 				while(r.next()) {
@@ -47,7 +47,7 @@ public class Book {
 		public void insert_rents(String H_id, String C_id, String Date, String duration,String people) {
 			try {
 				Class.forName("org.postgresql.Driver");
-				Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Project", "postgres", "Suraj@27");
+				Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Project", "postgres", "admin");
 				stmt = connection.createStatement();
 				String sql = "insert into book(houseboat_id,customer_id,Orderdate,duration,people)"
 						+" values ( '"+H_id+"' , '"+C_id+"' , '"+Date+"' , '"+duration+"', '"+people+"');"; 
@@ -62,7 +62,7 @@ public class Book {
 		public boolean search(String H_id,String date) {
 			try {
 				Class.forName("org.postgresql.Driver");
-				Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Project", "postgres", "Suraj@27");
+				Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Project", "postgres", "admin");
 				stmt = connection.createStatement();
 				String sql = "select Orderdate from book where houseboat_id = '"+ H_id + "';";
 				ResultSet r = stmt.executeQuery(sql);
@@ -85,7 +85,7 @@ public class Book {
 			String HID = s1;
 			try {
 				Class.forName("org.postgresql.Driver");
-				/*Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Project", "postgres", "Suraj@27");
+				/*Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Project", "postgres", "admin");
 				PreparedStatement stmt=connection.prepareStatement("select Orderdate from book where houseboat_id=? and customer_id=? ");
 				stmt.setString(1, HID);
 				stmt.setString(2, custid);

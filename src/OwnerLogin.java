@@ -98,7 +98,7 @@ public class OwnerLogin implements ActionListener{
 				String UserName = textField.getText();        
 		        String Password=String.valueOf(passwordField.getPassword());
 		        try {
-		       	 Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Project", "postgres", "Suraj@27");
+		       	 Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Project", "postgres", "admin");
 		       	 PreparedStatement st = (PreparedStatement) connection.prepareStatement("Select username,password from owner_login where username =? and password =?");
 		       	 st.setString(1, UserName);
 		       	 st.setString(2, Password);

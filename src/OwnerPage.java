@@ -73,7 +73,7 @@ public class OwnerPage {
 		public void setConnection() {
 	    	try {
 				Class.forName("org.postgresql.Driver");
-				c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Project", "postgres", "Suraj@27");
+				c = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Project", "postgres", "admin");
 			}
 			catch(Exception e) {
 				e.printStackTrace();
